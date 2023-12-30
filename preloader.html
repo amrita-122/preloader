@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .preload{
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: lightblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+
+    }
+
+    .preload-finish{
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .cloud1,.cloud2,.cloud3{
+        height: 100px;
+        position: absolute;
+        right:0;
+    }
+
+    .cloud1{
+        top : 25%;
+        transform: translate(100%,-25%);
+        animation: cloud infinite ease-in 2s  ;
+
+    }
+
+    .cloud2{
+        top: 50%;
+        transform: translate(100%,-50%);
+        animation: cloud infinite ease-in 3s ;
+
+    }
+
+    .cloud3{
+        top:75%;
+        transform: translate(100%,-75%);
+       animation-name: cloud;
+       animation-duration: 3s;
+       animation-timing-function: ease-in-out;
+       animation-iteration-count: infinite;
+       animation-delay: 0s;
+       
+
+    }
+    .airplane{
+        height: 150px;
+        animation: airplane infinite ease-in-out 1s alternate;
+    }
+    .preload h3{
+        position: absolute;
+        top: 75%;
+        transform: translateY(-75%);
+    }
+
+    @keyframes airplane{
+        from{
+            transform: translateY(0px);
+        }
+        to{
+            transform: translateY(50px);
+        }
+    }
+    @keyframes cloud{
+        from{
+            right: 0;
+        }
+        to{
+            right: 120%;
+        }
+        
+    }
+
+</style>
+<body>
+<!--preload tag goes on top-->
+
+    <div class="preload">
+        <img class="airplane" src="airplane.png" alt="airplane">
+        <h3>Landing on website...</h3>
+        <img src="cloud.png" alt="" class="cloud1">
+        <img src="cloud.png" alt="" class="cloud2">
+        <img src="cloud.png" alt="" class="cloud3">
+    </div> 
+
+    <header></header>
+    <section>
+        <img src="airplane.png" alt="">
+    </section>
+
+    <!-- <script>
+        window.addEventListener('load',() =>{
+
+        const preload = document.querySelector('.preload')
+        preload.classList.add('preload-finish')
+                    
+    })
+    </script> -->
+</body>
+</html>
